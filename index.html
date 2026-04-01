@@ -142,49 +142,71 @@
       color: #fff; font-size: 2rem; cursor: pointer; min-height: 44px; min-width: 44px;
     }
 
-    /* ─── Hero: Editorial Split ─── */
+    /* ─── Hero: Full-Viewport Patriotic ─── */
     .hero {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 100vh; padding-top: 68px;
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding-top: 68px;
+      background-image: url('https://images.unsplash.com/photo-1551836022-4c4ee58f5340?w=1800&h=1100&fit=crop&auto=format');
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
+    }
+    /* Deep navy-to-transparent overlay, heavy on left for legibility */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg,
+        rgba(18,20,50,0.93) 0%,
+        rgba(18,20,50,0.82) 38%,
+        rgba(18,20,50,0.45) 65%,
+        rgba(18,20,50,0.15) 100%);
+      z-index: 1;
+    }
+    /* Subtle red stripe accent along the left edge */
+    .hero::after {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0;
+      width: 5px;
+      background: linear-gradient(to bottom, var(--primary) 0%, var(--primary-dark) 100%);
+      z-index: 2;
     }
     .hero-left {
-      background: var(--accent);
+      position: relative; z-index: 3;
       display: flex; flex-direction: column;
       justify-content: center;
-      padding: 6rem 5% 6rem 8%;
-      position: relative; overflow: hidden;
-    }
-    .hero-left::before {
-      content: ''; position: absolute;
-      top: -80px; right: -80px;
-      width: 320px; height: 320px;
-      background: var(--primary); opacity: 0.1; border-radius: 50%;
-    }
-    .hero-left::after {
-      content: ''; position: absolute;
-      bottom: 40px; left: -100px;
-      width: 260px; height: 260px;
-      background: var(--gold); opacity: 0.06; border-radius: 50%;
+      padding: 5rem 5% 5rem 8%;
+      max-width: 700px;
     }
     .hero-eyebrow {
       display: flex; align-items: center;
-      gap: 0.8rem; margin-bottom: 2rem;
+      gap: 0.8rem; margin-bottom: 1.8rem;
     }
-    .hero-eyebrow-line { width: 40px; height: 2px; background: var(--gold); }
+    .hero-eyebrow-line { width: 40px; height: 2px; background: var(--primary); flex-shrink: 0; }
     .hero-eyebrow-text {
       font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold);
+      letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold);
     }
     .hero-heading {
       font-family: 'EB Garamond', serif;
-      font-size: clamp(2.6rem, 4.5vw, 4.4rem);
-      font-weight: 700; line-height: 1.08;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 800; line-height: 1.05;
       color: #fff; margin-bottom: 1.6rem;
     }
     .hero-heading em { font-style: italic; color: var(--gold); }
+    /* Bold red underline on the last word group */
+    .hero-heading .hero-underline {
+      position: relative; display: inline-block;
+    }
+    .hero-heading .hero-underline::after {
+      content: '';
+      position: absolute; bottom: -6px; left: 0; right: 0;
+      height: 4px; background: var(--primary);
+    }
     .hero-sub {
-      font-size: 1rem; color: rgba(255,255,255,0.7);
-      max-width: 380px; margin-bottom: 2.8rem; line-height: 1.75;
+      font-size: 1.05rem; color: rgba(255,255,255,0.72);
+      max-width: 440px; margin-bottom: 2.8rem; line-height: 1.78;
     }
     .hero-btns {
       display: flex; align-items: center;
@@ -192,7 +214,7 @@
     }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 1.8rem;
+      padding: 0.9rem 2rem;
       background: var(--primary); color: #fff;
       font-family: 'Lato', sans-serif; font-size: 0.78rem;
       font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
@@ -202,21 +224,25 @@
     .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-1px); }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 1.8rem;
+      padding: 0.9rem 2rem;
       background: transparent; color: #fff;
       font-family: 'Lato', sans-serif; font-size: 0.78rem;
       font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
       text-decoration: none; border: 2px solid rgba(255,255,255,0.4);
       cursor: pointer; transition: border-color 200ms, background 200ms; min-height: 44px;
     }
-    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
-
-    .hero-right { position: relative; overflow: hidden; background: var(--accent); }
-    .hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .hero-right-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(60,59,110,0.4) 0%, transparent 55%);
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    /* Stars cluster — decorative, right side of hero */
+    .hero-stars-deco {
+      position: absolute; right: 6%; bottom: 12%;
+      z-index: 3; opacity: 0.18;
     }
+    /* Bottom wave divider */
+    .hero-wave {
+      position: absolute; bottom: -1px; left: 0; right: 0;
+      z-index: 4; line-height: 0;
+    }
+    .hero-wave svg { display: block; width: 100%; }
 
     /* ─── Proof Bar ─── */
     .proof-bar {
@@ -474,9 +500,9 @@
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
 
-      .hero { grid-template-columns: 1fr; min-height: 100svh; }
-      .hero-left { padding: 5rem 5% 4.5rem; min-height: 100svh; justify-content: center; }
-      .hero-right { display: none; }
+      .hero { min-height: 100svh; background-position: center center; }
+      .hero-left { padding: 5rem 5% 6rem; }
+      .hero-stars-deco { display: none; }
       .hero-heading { font-size: clamp(2.2rem, 8vw, 3rem); }
       .hero-btns { flex-direction: column; align-items: flex-start; }
       .hero-btns .btn-primary,
@@ -549,7 +575,7 @@
 
 <main>
 
-<!-- Hero: Editorial Split -->
+<!-- Hero: Full-Viewport Patriotic -->
 <section class="hero" id="home" aria-label="Hero">
   <div class="hero-left">
     <div class="hero-eyebrow">
@@ -557,8 +583,8 @@
       <span class="hero-eyebrow-text">Island County, Washington</span>
     </div>
     <h1 class="hero-heading">
-      Fighting for <em>Your</em><br>
-      Island County<br>
+      Fighting for<br>
+      <em>Your</em> <span class="hero-underline">Island County</span><br>
       Values
     </h1>
     <p class="hero-sub">
@@ -569,11 +595,24 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Get Involved
       </a>
-      <a href="#services" class="btn-outline">Learn More</a>
+      <a href="#services" class="btn-outline">Our Mission</a>
     </div>
   </div>
-  <div class="hero-right" id="heroRight" aria-hidden="true">
-    <div class="hero-right-overlay"></div>
+  <!-- Decorative star cluster, right side -->
+  <div class="hero-stars-deco" aria-hidden="true">
+    <svg width="220" height="220" viewBox="0 0 220 220" fill="none">
+      <polygon points="110,10 120,45 157,45 128,67 138,102 110,82 82,102 92,67 63,45 100,45" fill="white"/>
+      <polygon points="30,80 36,100 57,100 41,112 47,132 30,120 13,132 19,112 3,100 24,100" fill="white" opacity="0.6"/>
+      <polygon points="185,60 191,80 212,80 196,92 202,112 185,100 168,112 174,92 158,80 179,80" fill="white" opacity="0.6"/>
+      <polygon points="60,155 64,168 78,168 67,176 71,189 60,181 49,189 53,176 42,168 56,168" fill="white" opacity="0.45"/>
+      <polygon points="170,150 174,163 188,163 177,171 181,184 170,176 159,184 163,171 152,163 166,163" fill="white" opacity="0.45"/>
+    </svg>
+  </div>
+  <!-- Wave divider -->
+  <div class="hero-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,36 C360,72 1080,0 1440,36 L1440,72 L0,72 Z" fill="#F8F7F2"/>
+    </svg>
   </div>
 </section>
 
@@ -878,27 +917,6 @@
     document.body.style.overflow = '';
   }
   navClose.addEventListener('click', closeNav);
-
-  // Hero image
-  const heroRight = document.getElementById('heroRight');
-  fetch('https://api.unsplash.com/photos/random?query=american+flag+government+civic&orientation=portrait&client_id=X40-Lk7G_Q6Zk-Cn4jXIDNbMzfHlIfj7fdhl-J-5b58')
-    .then(r => r.json())
-    .then(d => {
-      if (d && d.urls) {
-        const img = document.createElement('img');
-        img.src = d.urls.regular;
-        img.alt = 'Island County, Washington';
-        img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-        heroRight.insertBefore(img, heroRight.firstChild);
-      }
-    })
-    .catch(() => {
-      const img = document.createElement('img');
-      img.src = 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=900&h=1200&fit=crop&auto=format';
-      img.alt = 'Island County Republican Party';
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-      heroRight.insertBefore(img, heroRight.firstChild);
-    });
 
   // IntersectionObserver: fade-in sections
   const sections = document.querySelectorAll('.section');
