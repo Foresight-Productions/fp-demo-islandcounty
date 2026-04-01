@@ -3,54 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Island County Republican Party | Your Voice in Island County, WA</title>
-  <meta name="description" content="Island County Republican Party — championing conservative values, endorsing strong candidates, and fighting for the people of Oak Harbor and Island County, WA.">
+  <title>Island County Republican Party | Oak Harbor, WA</title>
+  <meta name="description" content="The official Republican Party of Island County, WA. Fighting for lower taxes, constitutional rights, strong military families, and conservative values in Oak Harbor, Coupeville, and Langley.">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://foresight-productions.github.io/fp-demo-islandcounty/">
-  <meta property="og:title" content="Island County Republican Party | Your Voice · Oak Harbor, WA">
-  <meta property="og:description" content="Island County Republicans are fighting for your values — endorsing strong candidates, registering voters, and building a stronger community in Island County, WA.">
+  <meta property="og:title" content="Island County Republican Party | Your Conservative Voice · Oak Harbor, WA">
+  <meta property="og:description" content="Fighting for lower taxes, constitutional rights, strong military families, and conservative values across Island County, Washington.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop&auto=format">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="American flags waving for Island County Republican Party, Oak Harbor WA">
+  <meta property="og:image:alt" content="American flags at sunset — Island County Republican Party, Oak Harbor WA">
   <meta property="og:site_name" content="Island County Republican Party">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Island County Republican Party | Your Voice · Oak Harbor, WA">
-  <meta name="twitter:description" content="Island County Republicans are fighting for your values — endorsing strong candidates, registering voters, and building a stronger community in Island County, WA.">
+  <meta name="twitter:title" content="Island County Republican Party | Oak Harbor, WA">
+  <meta name="twitter:description" content="Fighting for lower taxes, constitutional rights, strong military families, and conservative values across Island County, Washington.">
   <meta name="twitter:image" content="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop&auto=format">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Oswald (display/political) + EB Garamond (editorial) + Lato (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <!-- Design System
-    Style: Editorial Grid / Magazine + Trust & Authority
-    Archetype: Editorial Split
-    Fonts: EB Garamond / Lato
-    Palette: primary #B22234 | accent #3C3B6E | bg #F8F7F2 | text #1A1A2E | gold #C9A84C
-    Anti-patterns avoided: Excessive animation, dark mode by default
+    Style: Bold Poster + Trust & Authority
+    Archetype: Political Campaign / Civic Authority
+    Fonts: Oswald (display) / EB Garamond (editorial) / Lato (body)
+    Palette: red #BF0A30 | navy #002868 | white #fff | bg #F4F3EE | gold #C9A843
+    Anti-patterns avoided: Excessive animation, generic business look, dark-by-default mode
   -->
-
   <style>
-    /* ─── CSS Variables ─── */
     :root {
-      --primary: #B22234;
-      --primary-dark: #8B1A27;
-      --accent: #3C3B6E;
-      --accent-light: #5856A0;
-      --text: #1A1A2E;
-      --text-muted: #5A5A72;
-      --bg: #F8F7F2;
-      --bg-subtle: #EFEDE6;
-      --surface: #FFFFFF;
-      --gold: #C9A84C;
-      --border: rgba(26,26,46,0.12);
+      --red:        #BF0A30;
+      --red-dark:   #95081E;
+      --navy:       #002868;
+      --navy-light: #0A3A82;
+      --white:      #FFFFFF;
+      --bg:         #F4F3EE;
+      --bg-subtle:  #E8E6DC;
+      --surface:    #FFFFFF;
+      --text:       #111827;
+      --text-muted: #4B5563;
+      --gold:       #C9A843;
+      --border:     rgba(0,40,104,0.12);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,77 +62,99 @@
       line-height: 1.65;
     }
 
+    /* ─── Announcement Bar ─── */
+    .announce-bar {
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 0.45rem 5%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .announce-bar a { color: #fff; text-decoration: underline; }
+    .announce-dot { opacity: 0.5; }
+
     /* ─── Nav ─── */
     #nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
+      position: sticky;
+      top: 0;
       z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 5%;
       height: 68px;
-      background: rgba(26,26,46,0.97);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(201,168,76,0.2);
+      background: var(--navy);
+      border-bottom: 3px solid var(--red);
       transition: box-shadow 250ms ease;
     }
-    #nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+    #nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.35); }
 
     .nav-logo {
-      display: flex; align-items: center; gap: 0.6rem;
+      display: flex; align-items: center; gap: 0.7rem;
       text-decoration: none; flex-shrink: 0;
     }
-    .nav-logo-star { width: 26px; height: 26px; flex-shrink: 0; }
+    .nav-elephant {
+      width: 32px; height: 32px; flex-shrink: 0;
+    }
     .nav-logo-text {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.08rem; font-weight: 600;
-      color: #fff; letter-spacing: 0.02em; line-height: 1.2;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: #fff; letter-spacing: 0.06em; line-height: 1.15;
+      text-transform: uppercase;
     }
     .nav-logo-text span {
-      display: block; font-family: 'Lato', sans-serif;
-      font-size: 0.58rem; font-weight: 300;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.55rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
     }
     .nav-links {
       display: flex; align-items: center;
-      gap: 2.2rem; flex-shrink: 0;
+      gap: 2rem; flex-shrink: 0;
     }
     .nav-links a {
-      text-decoration: none; font-size: 0.78rem; font-weight: 700;
+      text-decoration: none; font-size: 0.75rem; font-weight: 700;
       letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(255,255,255,0.78);
-      transition: color 200ms ease;
+      color: rgba(255,255,255,0.75);
+      transition: color 180ms;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: #fff; }
     .nav-cta {
-      padding: 0.4rem 1.2rem;
-      border: 1.5px solid var(--gold) !important;
-      color: var(--gold) !important;
-      transition: background 200ms, color 200ms !important;
+      padding: 0.42rem 1.25rem;
+      background: var(--red);
+      color: #fff !important;
+      border-radius: 2px;
+      transition: background 180ms !important;
     }
-    .nav-cta:hover { background: var(--gold); color: var(--accent) !important; }
+    .nav-cta:hover { background: var(--red-dark) !important; }
 
     .nav-toggle {
       display: none; flex-direction: column; gap: 5px;
       cursor: pointer; padding: 4px;
       background: none; border: none; flex-shrink: 0;
     }
-    .nav-toggle span {
-      display: block; width: 24px; height: 2px;
-      background: #fff; transition: all 200ms ease;
-    }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; transition: all 200ms; }
     .nav-overlay {
       display: none; position: fixed; inset: 0;
-      background: var(--accent); z-index: 999;
+      background: var(--navy); z-index: 999;
       flex-direction: column; align-items: center;
       justify-content: center; gap: 2.5rem;
     }
     .nav-overlay.open { display: flex; }
     .nav-overlay a {
-      font-family: 'EB Garamond', serif; font-size: 2.2rem;
+      font-family: 'Oswald', sans-serif; font-size: 2.2rem;
       font-weight: 600; color: #fff; text-decoration: none;
-      letter-spacing: 0.04em; transition: color 200ms;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      transition: color 180ms;
     }
     .nav-overlay a:hover { color: var(--gold); }
     .nav-overlay-close {
@@ -142,341 +163,484 @@
       color: #fff; font-size: 2rem; cursor: pointer; min-height: 44px; min-width: 44px;
     }
 
-    /* ─── Hero: Full-Viewport Patriotic ─── */
+    /* ─── Hero ─── */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: calc(100vh - 100px);
       display: flex; align-items: center;
-      padding-top: 68px;
-      background-image: url('https://images.unsplash.com/photo-1551836022-4c4ee58f5340?w=1800&h=1100&fit=crop&auto=format');
+      background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1920&h=1080&fit=crop&auto=format');
       background-size: cover;
-      background-position: center 35%;
-      background-repeat: no-repeat;
+      background-position: center 40%;
     }
-    /* Deep navy-to-transparent overlay, heavy on left for legibility */
-    .hero::before {
-      content: '';
+    .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(105deg,
-        rgba(18,20,50,0.93) 0%,
-        rgba(18,20,50,0.82) 38%,
-        rgba(18,20,50,0.45) 65%,
-        rgba(18,20,50,0.15) 100%);
-      z-index: 1;
+      background: linear-gradient(110deg,
+        rgba(0,20,70,0.91) 0%,
+        rgba(0,20,70,0.78) 42%,
+        rgba(0,20,70,0.38) 72%,
+        rgba(0,20,70,0.12) 100%);
     }
-    /* Subtle red stripe accent along the left edge */
-    .hero::after {
-      content: '';
+    /* Red left stripe */
+    .hero-stripe {
       position: absolute; top: 0; left: 0; bottom: 0;
-      width: 5px;
-      background: linear-gradient(to bottom, var(--primary) 0%, var(--primary-dark) 100%);
-      z-index: 2;
+      width: 6px;
+      background: var(--red);
     }
-    .hero-left {
-      position: relative; z-index: 3;
-      display: flex; flex-direction: column;
-      justify-content: center;
-      padding: 5rem 5% 5rem 8%;
-      max-width: 700px;
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 5rem 8%;
+      max-width: 760px;
     }
     .hero-eyebrow {
-      display: flex; align-items: center;
-      gap: 0.8rem; margin-bottom: 1.8rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--red);
+      padding: 0.32rem 0.85rem;
+      margin-bottom: 1.8rem;
     }
-    .hero-eyebrow-line { width: 40px; height: 2px; background: var(--primary); flex-shrink: 0; }
     .hero-eyebrow-text {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: #fff;
     }
     .hero-heading {
-      font-family: 'EB Garamond', serif;
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      font-weight: 800; line-height: 1.05;
-      color: #fff; margin-bottom: 1.6rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 700; line-height: 1.0;
+      color: #fff; text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
     }
-    .hero-heading em { font-style: italic; color: var(--gold); }
-    /* Bold red underline on the last word group */
-    .hero-heading .hero-underline {
-      position: relative; display: inline-block;
-    }
-    .hero-heading .hero-underline::after {
-      content: '';
-      position: absolute; bottom: -6px; left: 0; right: 0;
-      height: 4px; background: var(--primary);
-    }
+    .hero-heading .hl { color: var(--gold); }
     .hero-sub {
-      font-size: 1.05rem; color: rgba(255,255,255,0.72);
-      max-width: 440px; margin-bottom: 2.8rem; line-height: 1.78;
+      font-size: 1.05rem; color: rgba(255,255,255,0.75);
+      max-width: 480px; margin-bottom: 2.5rem; line-height: 1.78;
     }
-    .hero-btns {
-      display: flex; align-items: center;
-      gap: 1rem; flex-wrap: wrap;
-    }
-    .btn-primary {
+    .hero-btns { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-red {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.9rem 2rem;
-      background: var(--primary); color: #fff;
-      font-family: 'Lato', sans-serif; font-size: 0.78rem;
-      font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
-      text-decoration: none; border: 2px solid var(--primary);
-      cursor: pointer; transition: background 200ms, transform 150ms; min-height: 44px;
+      padding: 0.9rem 2.1rem;
+      background: var(--red); color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 0.88rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border: 2px solid var(--red);
+      transition: background 180ms, transform 150ms; min-height: 44px;
     }
-    .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-1px); }
-    .btn-outline {
+    .btn-red:hover { background: var(--red-dark); border-color: var(--red-dark); transform: translateY(-1px); }
+
+    .btn-white {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.9rem 2rem;
+      padding: 0.9rem 2.1rem;
       background: transparent; color: #fff;
-      font-family: 'Lato', sans-serif; font-size: 0.78rem;
-      font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
-      text-decoration: none; border: 2px solid rgba(255,255,255,0.4);
-      cursor: pointer; transition: border-color 200ms, background 200ms; min-height: 44px;
+      font-family: 'Oswald', sans-serif; font-size: 0.88rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 180ms, background 180ms; min-height: 44px;
     }
-    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
-    /* Stars cluster — decorative, right side of hero */
-    .hero-stars-deco {
-      position: absolute; right: 6%; bottom: 12%;
-      z-index: 3; opacity: 0.18;
+    .btn-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+    /* Stars decoration */
+    .hero-stars {
+      position: absolute; right: 7%; bottom: 15%;
+      z-index: 2; opacity: 0.15; pointer-events: none;
     }
-    /* Bottom wave divider */
+    /* Wave -->
     .hero-wave {
-      position: absolute; bottom: -1px; left: 0; right: 0;
-      z-index: 4; line-height: 0;
+      position: absolute; bottom: -1px; left: 0; right: 0; z-index: 3;
+      line-height: 0;
     }
     .hero-wave svg { display: block; width: 100%; }
+
+    /* ─── Values Strip ─── */
+    .values-strip {
+      background: var(--navy);
+      padding: 0;
+    }
+    .values-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .value-item {
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 1.5rem 2rem;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      transition: background 200ms;
+    }
+    .value-item:last-child { border-right: none; }
+    .value-item:hover { background: rgba(255,255,255,0.04); }
+    .value-icon { flex-shrink: 0; color: var(--gold); }
+    .value-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #fff; line-height: 1.3;
+    }
+    .value-desc { font-size: 0.68rem; color: rgba(255,255,255,0.45); margin-top: 0.1rem; }
 
     /* ─── Proof Bar ─── */
     .proof-bar {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 1.5rem 5%;
+      padding: 1.3rem 5%;
       display: flex; align-items: center;
       justify-content: center; gap: 3rem; flex-wrap: wrap;
     }
     .proof-item {
-      display: flex; align-items: center; gap: 0.55rem;
-      font-size: 0.78rem; font-weight: 700;
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.74rem; font-weight: 700;
       letter-spacing: 0.09em; text-transform: uppercase; color: var(--text-muted);
     }
-    .proof-stars { color: var(--gold); font-size: 0.88rem; letter-spacing: 0.04em; }
-    .proof-sep { width: 1px; height: 22px; background: var(--border); }
+    .proof-stars { color: var(--gold); font-size: 0.82rem; }
+    .proof-sep { width: 1px; height: 20px; background: var(--border); }
 
     /* ─── Section Base ─── */
     .section {
-      padding: 7rem 8%;
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 600ms ease, transform 600ms ease;
+      padding: 6rem 8%;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 550ms ease, transform 550ms ease;
     }
     .section.visible { opacity: 1; transform: translateY(0); }
-    .section-label {
-      display: flex; align-items: center;
-      gap: 0.8rem; margin-bottom: 1.1rem;
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 0.9rem;
     }
-    .section-label-line { width: 32px; height: 2px; background: var(--primary); }
-    .section-label-text {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.24em; text-transform: uppercase; color: var(--primary);
+    .eyebrow-line { width: 28px; height: 2px; background: var(--red); flex-shrink: 0; }
+    .eyebrow-text {
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--red);
     }
     .section-heading {
       font-family: 'EB Garamond', serif;
-      font-size: clamp(1.9rem, 3.8vw, 3rem);
+      font-size: clamp(1.9rem, 3.6vw, 2.9rem);
       font-weight: 700; color: var(--text);
-      line-height: 1.18; margin-bottom: 1rem;
+      line-height: 1.18; margin-bottom: 0.9rem;
     }
     .section-sub {
-      font-size: 0.97rem; color: var(--text-muted);
-      max-width: 520px; line-height: 1.78; margin-bottom: 3.5rem;
+      font-size: 0.95rem; color: var(--text-muted);
+      max-width: 520px; line-height: 1.8; margin-bottom: 3rem;
     }
 
-    /* ─── Services: Editorial Rows ─── */
-    .services-bg { background: var(--bg); }
-    .services-list { display: flex; flex-direction: column; }
-    .service-row {
-      display: grid; grid-template-columns: 110px 1fr 50px;
-      align-items: start; padding: 2.4rem 0;
-      border-top: 1px solid var(--border); gap: 2rem;
-      transition: background 200ms ease;
+    /* ─── Issues "What We Stand For" ─── */
+    .issues-bg { background: var(--bg); }
+    .issues-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--bg-subtle);
     }
-    .service-row:last-child { border-bottom: 1px solid var(--border); }
-    .service-row:hover { background: rgba(178,34,52,0.025); }
-    .service-num {
-      font-family: 'EB Garamond', serif;
-      font-size: 3.4rem; font-weight: 700;
-      color: transparent; line-height: 1;
-      -webkit-text-stroke: 1.5px var(--border);
-      transition: -webkit-text-stroke-color 200ms;
+    .issue-card {
+      background: var(--surface);
+      padding: 2.2rem 2rem;
+      position: relative;
+      transition: background 200ms;
     }
-    .service-row:hover .service-num { -webkit-text-stroke-color: var(--primary); }
-    .service-name {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.5rem; font-weight: 600;
-      color: var(--text); margin-bottom: 0.45rem;
+    .issue-card:hover { background: #fafafa; }
+    .issue-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--red);
     }
-    .service-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.72; max-width: 560px; }
-    .service-icon { width: 40px; height: 40px; color: var(--primary); flex-shrink: 0; margin-top: 4px; }
+    .issue-icon {
+      width: 44px; height: 44px;
+      background: rgba(191,10,48,0.08);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.1rem;
+      color: var(--red);
+    }
+    .issue-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--navy); text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 0.6rem;
+    }
+    .issue-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.72; }
 
     /* ─── About ─── */
-    .about-bg { background: var(--surface); }
+    .about-bg { background: var(--navy); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 6rem; align-items: start;
+      gap: 5rem; align-items: center;
     }
     .about-img-wrap { position: relative; }
-    .about-img-accent {
-      position: absolute; top: -16px; left: -16px;
-      width: 72px; height: 72px; background: var(--primary); z-index: 0;
-    }
     .about-img {
       width: 100%; aspect-ratio: 4/5;
-      object-fit: cover; display: block; position: relative; z-index: 1;
+      object-fit: cover; display: block;
     }
+    /* Red corner accent */
+    .about-img-wrap::before {
+      content: '';
+      position: absolute; top: -12px; left: -12px;
+      width: 60px; height: 60px;
+      background: var(--red); z-index: 0;
+    }
+    .about-img { position: relative; z-index: 1; }
     .about-badge {
       position: absolute; bottom: 2rem; right: -1.5rem;
-      background: var(--accent); color: #fff;
-      padding: 1.2rem 1.5rem; text-align: center; min-width: 130px; z-index: 2;
+      background: var(--red); color: #fff;
+      padding: 1.1rem 1.4rem; text-align: center;
+      min-width: 120px; z-index: 2;
     }
     .about-badge-num {
-      font-family: 'EB Garamond', serif;
-      font-size: 2.4rem; font-weight: 700; line-height: 1; display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem; font-weight: 700; line-height: 1; display: block;
     }
     .about-badge-label {
-      font-size: 0.62rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.7; line-height: 1.4;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      opacity: 0.8; line-height: 1.4;
     }
+    .about-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem;
+    }
+    .about-eyebrow .eyebrow-line { background: var(--gold); }
+    .about-eyebrow .eyebrow-text { color: var(--gold); }
+    .about-heading {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.9rem, 3vw, 2.7rem);
+      font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem;
+    }
+    .about-body { font-size: 0.94rem; color: rgba(255,255,255,0.65); line-height: 1.82; margin-bottom: 2.5rem; }
     .about-stats {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.2rem; margin-bottom: 2.5rem;
+      gap: 1rem; margin-bottom: 2.5rem;
     }
-    .stat-card { background: var(--bg); padding: 1.4rem; border-left: 3px solid var(--primary); }
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      padding: 1.2rem; border-left: 3px solid var(--red);
+    }
     .stat-num {
-      font-family: 'EB Garamond', serif;
-      font-size: 2.3rem; font-weight: 700;
-      color: var(--primary); line-height: 1; display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--gold); line-height: 1; display: block;
     }
     .stat-label {
-      font-size: 0.72rem; font-weight: 700;
+      font-size: 0.68rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--text-muted); margin-top: 0.25rem;
+      color: rgba(255,255,255,0.5); margin-top: 0.2rem;
     }
-    .about-bullets { display: flex; flex-direction: column; gap: 0.85rem; }
+    .about-bullets { display: flex; flex-direction: column; gap: 0.8rem; }
     .about-bullet {
-      display: flex; align-items: flex-start; gap: 0.7rem;
-      font-size: 0.9rem; color: var(--text); line-height: 1.6;
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6;
     }
-    .about-bullet svg { flex-shrink: 0; margin-top: 0.18rem; color: var(--primary); }
+    .about-bullet svg { flex-shrink: 0; margin-top: 0.2rem; color: var(--gold); }
+
+    /* ─── Events ─── */
+    .events-bg { background: var(--bg); }
+    .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .event-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 180ms, box-shadow 180ms;
+    }
+    .event-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+    .event-img {
+      width: 100%; height: 160px;
+      object-fit: cover; display: block;
+    }
+    .event-body { padding: 1.4rem 1.5rem; }
+    .event-date {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 0.45rem;
+    }
+    .event-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--navy); text-transform: uppercase;
+      letter-spacing: 0.04em; margin-bottom: 0.5rem; line-height: 1.25;
+    }
+    .event-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.68; margin-bottom: 1rem; }
+    .event-meta {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; color: var(--text-muted); font-weight: 700;
+    }
 
     /* ─── Testimonials ─── */
     .testimonials-bg { background: var(--bg-subtle); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .testimonial-card {
       background: var(--surface);
-      padding: 2rem 1.8rem; border-top: 3px solid var(--primary);
+      padding: 2rem 1.8rem;
+      border-left: 4px solid var(--red);
+      position: relative;
     }
-    .testimonial-quote {
-      font-family: 'EB Garamond', serif;
-      font-size: 3.2rem; color: var(--primary);
-      line-height: 0.75; margin-bottom: 1rem; opacity: 0.35;
+    .testimonial-stars { color: var(--gold); font-size: 0.82rem; margin-bottom: 1rem; }
+    .testimonial-text { font-size: 0.9rem; color: var(--text); line-height: 1.78; margin-bottom: 1.4rem; font-style: italic; }
+    .testimonial-author {
+      display: flex; align-items: center; gap: 0.8rem;
     }
-    .testimonial-stars { color: var(--gold); font-size: 0.82rem; margin-bottom: 0.8rem; letter-spacing: 0.04em; }
-    .testimonial-text { font-size: 0.9rem; color: var(--text); line-height: 1.78; margin-bottom: 1.5rem; font-style: italic; }
-    .testimonial-author { font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
-    .testimonial-location { font-size: 0.72rem; color: var(--text-muted); opacity: 0.6; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--navy); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Oswald', sans-serif; font-size: 0.9rem;
+      font-weight: 700; color: #fff; text-transform: uppercase;
+    }
+    .testimonial-name { font-size: 0.82rem; font-weight: 700; color: var(--text); }
+    .testimonial-location { font-size: 0.72rem; color: var(--text-muted); }
 
     /* ─── CTA Banner ─── */
-    .cta-banner { background: var(--primary); padding: 5.5rem 8%; text-align: center; }
-    .cta-banner-heading {
-      font-family: 'EB Garamond', serif;
-      font-size: clamp(1.8rem,4vw,3.1rem);
-      font-weight: 700; color: #fff; margin-bottom: 1rem; line-height: 1.2;
+    .cta-banner {
+      position: relative; overflow: hidden;
+      background: var(--red);
+      padding: 5.5rem 8%;
+      text-align: center;
     }
-    .cta-banner-sub {
-      font-size: 1rem; color: rgba(255,255,255,0.72);
-      margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto;
+    .cta-banner::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
     }
-    .btn-gold {
+    .cta-banner::after {
+      content: '';
+      position: absolute; bottom: -80px; left: -80px;
+      width: 360px; height: 360px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .cta-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 700; color: #fff;
+      text-transform: uppercase; letter-spacing: 0.03em;
+      line-height: 1.1; margin-bottom: 1rem;
+      position: relative; z-index: 1;
+    }
+    .cta-sub {
+      font-size: 1rem; color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem; max-width: 480px;
+      margin-left: auto; margin-right: auto;
+      position: relative; z-index: 1;
+    }
+    .btn-navy {
       display: inline-flex; align-items: center; gap: 0.55rem;
-      padding: 0.9rem 2.2rem; background: var(--gold); color: var(--accent);
-      font-size: 0.78rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      text-decoration: none; border: 2px solid var(--gold);
-      transition: background 200ms, color 200ms, transform 150ms; min-height: 44px;
+      padding: 0.9rem 2.2rem; background: var(--navy); color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 0.88rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border: 2px solid var(--navy);
+      transition: background 180ms, transform 150ms; min-height: 44px;
+      position: relative; z-index: 1;
     }
-    .btn-gold:hover { background: transparent; color: var(--gold); transform: translateY(-2px); }
+    .btn-navy:hover { background: #001a50; transform: translateY(-2px); }
+    .btn-navy-outline {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.9rem 2.2rem; background: transparent; color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 0.88rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 180ms, background 180ms; min-height: 44px;
+      position: relative; z-index: 1;
+    }
+    .btn-navy-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    .cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
     /* ─── Contact ─── */
     .contact-bg { background: var(--surface); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 5rem; align-items: start; }
     .contact-phone-link {
       display: inline-block;
-      font-family: 'EB Garamond', serif;
-      font-size: 2.3rem; font-weight: 700;
-      color: var(--primary); text-decoration: none; margin-bottom: 0.3rem;
-      transition: color 200ms;
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--red); text-decoration: none; margin-bottom: 0.3rem;
+      transition: color 180ms;
     }
-    .contact-phone-link:hover { color: var(--primary-dark); }
+    .contact-phone-link:hover { color: var(--red-dark); }
     .contact-phone-label {
-      display: block; font-size: 0.68rem; font-weight: 700;
+      display: block; font-size: 0.66rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 2.5rem;
+      color: var(--text-muted); margin-bottom: 2.2rem;
     }
     .contact-hours-title {
-      font-size: 0.68rem; font-weight: 700;
+      font-size: 0.66rem; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 0.75rem;
+      color: var(--text-muted); margin-bottom: 0.7rem;
     }
     .contact-hours-item {
-      font-size: 0.86rem; color: var(--text);
-      margin-bottom: 0.28rem; display: flex; gap: 1rem;
+      font-size: 0.85rem; color: var(--text); margin-bottom: 0.25rem;
+      display: flex; gap: 1rem;
     }
-    .contact-hours-day { font-weight: 700; min-width: 120px; }
-    .contact-address { font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; margin-top: 1.8rem; }
-    .contact-address a { color: var(--primary); text-decoration: none; }
+    .contact-hours-day { font-weight: 700; min-width: 130px; }
+    .contact-address { font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; margin-top: 1.8rem; }
+    .contact-address a { color: var(--red); text-decoration: none; }
     .contact-address a:hover { text-decoration: underline; }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.32rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 0.9rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
     .form-label {
-      font-size: 0.68rem; font-weight: 700;
+      font-size: 0.66rem; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);
     }
     .form-input, .form-textarea {
-      padding: 0.8rem 1rem; border: 1.5px solid var(--border);
+      padding: 0.78rem 1rem; border: 1.5px solid var(--border);
       background: var(--bg); font-family: 'Lato', sans-serif;
       font-size: 0.9rem; color: var(--text);
-      outline: none; transition: border-color 200ms;
+      outline: none; transition: border-color 180ms;
       min-height: 44px; width: 100%;
     }
-    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
-    .form-textarea { min-height: 130px; resize: vertical; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--navy); }
+    .form-textarea { min-height: 120px; resize: vertical; }
+    .btn-submit {
+      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.88rem 2rem; background: var(--navy); color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 0.85rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      border: 2px solid var(--navy); cursor: pointer;
+      transition: background 180ms; min-height: 44px;
+    }
+    .btn-submit:hover { background: #001a50; }
 
     /* ─── Footer ─── */
-    footer {
-      background: var(--accent);
-      padding: 3rem 8%;
-      border-top: 3px solid var(--primary);
+    footer { background: var(--navy); padding: 3.5rem 8%; border-top: 4px solid var(--red); }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      align-items: start; gap: 3rem; margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .footer-inner {
-      display: flex; align-items: center;
-      justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+    .footer-brand {}
+    .footer-logo-row {
+      display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.7rem;
     }
-    .footer-logo {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.08rem; font-weight: 600; color: #fff;
+    .footer-brand-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: #fff; text-transform: uppercase; letter-spacing: 0.06em;
     }
-    .footer-logo span {
-      display: block; font-family: 'Lato', sans-serif;
-      font-size: 0.58rem; font-weight: 300;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+    .footer-brand-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 260px; }
+    .footer-nav-col h4 {
+      font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
     }
-    .footer-links {
-      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    .footer-nav-col a {
+      display: block; font-size: 0.8rem;
+      color: rgba(255,255,255,0.55); text-decoration: none;
+      margin-bottom: 0.5rem; transition: color 180ms;
     }
-    .footer-links a {
-      text-decoration: none; font-size: 0.74rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(255,255,255,0.55); transition: color 200ms;
+    .footer-nav-col a:hover { color: #fff; }
+    .footer-contact h4 {
+      font-size: 0.64rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
     }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
+    .footer-contact p { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .footer-contact a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .footer-contact a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+    .footer-affil {
+      font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+    }
 
     /* ─── Reduced Motion ─── */
     @media (prefers-reduced-motion: reduce) {
@@ -484,38 +648,45 @@
       * { animation: none !important; transition: none !important; }
     }
 
-    /* ─── Responsive: 1024px ─── */
+    /* ─── 1024px ─── */
     @media (max-width: 1024px) {
-      .about-grid { gap: 3.5rem; }
-      .about-badge { right: 0; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .footer-contact { grid-column: span 2; }
+      .values-inner { grid-template-columns: repeat(2, 1fr); }
+      .value-item:nth-child(2) { border-right: none; }
     }
 
-    /* ─── Responsive: 900px ─── */
+    /* ─── 900px ─── */
     @media (max-width: 900px) {
+      .issues-grid { grid-template-columns: 1fr 1fr; }
+      .events-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ─── Responsive: 768px ─── */
+    /* ─── 768px ─── */
     @media (max-width: 768px) {
+      .announce-bar { font-size: 0.64rem; gap: 0.8rem; }
+      .announce-dot { display: none; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
 
-      .hero { min-height: 100svh; background-position: center center; }
-      .hero-left { padding: 5rem 5% 6rem; }
-      .hero-stars-deco { display: none; }
-      .hero-heading { font-size: clamp(2.2rem, 8vw, 3rem); }
+      .hero { min-height: 100svh; background-position: 65% center; }
+      .hero-content { padding: 4.5rem 5% 7rem; }
+      .hero-heading { font-size: clamp(2.4rem, 9vw, 3.5rem); }
       .hero-btns { flex-direction: column; align-items: flex-start; }
-      .hero-btns .btn-primary,
-      .hero-btns .btn-outline { width: 100%; max-width: 300px; justify-content: center; }
+      .hero-btns .btn-red,
+      .hero-btns .btn-white { width: 100%; max-width: 300px; justify-content: center; }
+      .hero-stars { display: none; }
 
-      .proof-bar { gap: 1.4rem; padding: 1.3rem 5%; }
+      .values-inner { grid-template-columns: 1fr 1fr; }
+      .value-item { padding: 1.2rem 1.4rem; }
+
+      .proof-bar { gap: 1.2rem; padding: 1.2rem 5%; }
       .proof-sep { display: none; }
 
-      .section { padding: 4.5rem 5%; }
+      .section { padding: 4rem 5%; }
 
-      .service-row { grid-template-columns: 70px 1fr; }
-      .service-icon { display: none; }
-      .service-num { font-size: 2.4rem; }
+      .issues-grid { grid-template-columns: 1fr; }
 
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-img-wrap { padding-bottom: 2.5rem; }
@@ -524,97 +695,165 @@
       .testimonials-grid { grid-template-columns: 1fr; }
 
       .cta-banner { padding: 3.5rem 5%; }
+      .cta-btns { flex-direction: column; align-items: center; }
 
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .form-row { grid-template-columns: 1fr; }
 
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-contact { grid-column: unset; }
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
-    /* ─── Responsive: 400px ─── */
+    /* ─── 400px ─── */
     @media (max-width: 400px) {
       .about-stats { grid-template-columns: 1fr; }
-      .hero-btns .btn-primary,
-      .hero-btns .btn-outline { max-width: 100%; }
+      .values-inner { grid-template-columns: 1fr; }
+      .value-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .hero-btns .btn-red,
+      .hero-btns .btn-white { max-width: 100%; }
     }
   </style>
 </head>
 <body>
 
+<!-- Announcement Bar -->
+<div class="announce-bar" role="banner">
+  <span>&#128197; Next PCO Meeting: April 15, 2026 &middot; Oak Harbor</span>
+  <span class="announce-dot">&#9679;</span>
+  <span>&#128226; Voter Reg. Deadline: May 1, 2026 &mdash; <a href="#contact">Register Now</a></span>
+</div>
+
 <!-- Nav Overlay -->
-<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+<div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
   <button class="nav-overlay-close" id="navClose" aria-label="Close menu">&#x2715;</button>
-  <a href="#services" onclick="closeNav()">Services</a>
+  <a href="#issues" onclick="closeNav()">Our Values</a>
   <a href="#about" onclick="closeNav()">About</a>
-  <a href="#testimonials" onclick="closeNav()">Testimonials</a>
-  <a href="#contact" onclick="closeNav()">Get Involved</a>
+  <a href="#events" onclick="closeNav()">Events</a>
+  <a href="#contact" onclick="closeNav()">Contact</a>
+  <a href="#contact" onclick="closeNav()" style="color:var(--gold);">Join the Party &#8594;</a>
 </div>
 
 <!-- Nav -->
 <header id="nav" role="banner">
-  <a href="#home" class="nav-logo" aria-label="Island County Republican Party — Home">
-    <svg class="nav-logo-star" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <polygon points="13,2 15.9,9.8 24,9.8 17.5,14.8 19.9,22.5 13,17.9 6.1,22.5 8.5,14.8 2,9.8 10.1,9.8" fill="#C9A84C"/>
+  <a href="#" class="nav-logo" aria-label="Island County Republican Party Home">
+    <!-- Republican Elephant SVG -->
+    <svg class="nav-elephant" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <ellipse cx="14" cy="19" rx="10" ry="8" fill="#C9A843"/>
+      <ellipse cx="22" cy="15" rx="5" ry="4" fill="#C9A843"/>
+      <ellipse cx="27" cy="11" rx="2.5" ry="5" fill="#C9A843"/>
+      <circle cx="24" cy="10" r="1" fill="#002868"/>
+      <rect x="10" y="25" width="3" height="5" rx="1.5" fill="#C9A843"/>
+      <rect x="15" y="25" width="3" height="5" rx="1.5" fill="#C9A843"/>
+      <rect x="4" y="25" width="3" height="4" rx="1.5" fill="#C9A843"/>
+      <path d="M18 14 Q20 10 24 12" stroke="#C9A843" stroke-width="1.5" fill="none"/>
     </svg>
     <div class="nav-logo-text">
       Island County GOP
-      <span>Republican Party &middot; WA</span>
+      <span>Republican Party &middot; Washington State</span>
     </div>
   </a>
   <nav class="nav-links" aria-label="Main navigation">
-    <a href="#services">Services</a>
+    <a href="#issues">Our Values</a>
     <a href="#about">About</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact" class="nav-cta">Get Involved</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="nav-cta">Join the Party</a>
   </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
 
 <main>
 
-<!-- Hero: Full-Viewport Patriotic -->
-<section class="hero" id="home" aria-label="Hero">
-  <div class="hero-left">
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-stripe" aria-hidden="true"></div>
+
+  <div class="hero-content">
     <div class="hero-eyebrow">
-      <div class="hero-eyebrow-line"></div>
-      <span class="hero-eyebrow-text">Island County, Washington</span>
+      <span class="hero-eyebrow-text">&#9733; Official Republican Party of Island County, WA</span>
     </div>
     <h1 class="hero-heading">
-      Fighting for<br>
-      <em>Your</em> <span class="hero-underline">Island County</span><br>
-      Values
+      Your<br>
+      Conservative<br>
+      <span class="hl">Voice.</span>
     </h1>
     <p class="hero-sub">
-      The Island County Republican Party stands for lower taxes, constitutional rights, strong families, and a government that answers to its citizens — not the other way around.
+      Standing firm for lower taxes, Second Amendment rights, strong military families at NAS Whidbey Island, and constitutional government — right here in Island County, Washington.
     </p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">
+      <a href="#contact" class="btn-red">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Get Involved
+        Join the Fight
       </a>
-      <a href="#services" class="btn-outline">Our Mission</a>
+      <a href="#issues" class="btn-white">What We Stand For</a>
     </div>
   </div>
-  <!-- Decorative star cluster, right side -->
-  <div class="hero-stars-deco" aria-hidden="true">
-    <svg width="220" height="220" viewBox="0 0 220 220" fill="none">
-      <polygon points="110,10 120,45 157,45 128,67 138,102 110,82 82,102 92,67 63,45 100,45" fill="white"/>
-      <polygon points="30,80 36,100 57,100 41,112 47,132 30,120 13,132 19,112 3,100 24,100" fill="white" opacity="0.6"/>
-      <polygon points="185,60 191,80 212,80 196,92 202,112 185,100 168,112 174,92 158,80 179,80" fill="white" opacity="0.6"/>
-      <polygon points="60,155 64,168 78,168 67,176 71,189 60,181 49,189 53,176 42,168 56,168" fill="white" opacity="0.45"/>
-      <polygon points="170,150 174,163 188,163 177,171 181,184 170,176 159,184 163,171 152,163 166,163" fill="white" opacity="0.45"/>
+
+  <!-- Decorative stars -->
+  <div class="hero-stars" aria-hidden="true">
+    <svg width="200" height="200" viewBox="0 0 200 200">
+      <polygon points="100,8 115,55 165,55 125,84 140,130 100,102 60,130 75,84 35,55 85,55" fill="white"/>
+      <polygon points="28,70 37,96 64,96 43,112 51,138 28,122 5,138 13,112 -8,96 19,96" fill="white" opacity="0.55"/>
+      <polygon points="168,55 177,81 204,81 183,97 191,123 168,107 145,123 153,97 132,81 159,81" fill="white" opacity="0.55"/>
+      <polygon points="50,145 56,163 75,163 60,174 66,192 50,181 34,192 40,174 25,163 44,163" fill="white" opacity="0.4"/>
+      <polygon points="155,140 161,158 180,158 165,169 171,187 155,176 139,187 145,169 130,158 149,158" fill="white" opacity="0.4"/>
     </svg>
   </div>
-  <!-- Wave divider -->
+
+  <!-- Wave -->
   <div class="hero-wave" aria-hidden="true">
-    <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,36 C360,72 1080,0 1440,36 L1440,72 L0,72 Z" fill="#F8F7F2"/>
+    <svg viewBox="0 0 1440 64" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 L0,64 Z" fill="#002868"/>
     </svg>
   </div>
 </section>
+
+<!-- Values Strip -->
+<div class="values-strip" role="region" aria-label="Core values">
+  <div class="values-inner">
+    <div class="value-item">
+      <svg class="value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <div>
+        <div class="value-name">Constitutional Rights</div>
+        <div class="value-desc">2nd Amendment &amp; Bill of Rights</div>
+      </div>
+    </div>
+    <div class="value-item">
+      <svg class="value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2.5-8 4v2h16v-2c0-1.5-3-4-8-4z"/>
+        <path d="M19 3l2 2-9 9-4-4 2-2 2 2 7-7z" fill="currentColor" stroke="none"/>
+      </svg>
+      <div>
+        <div class="value-name">Military Families</div>
+        <div class="value-desc">Proud home of NAS Whidbey Island</div>
+      </div>
+    </div>
+    <div class="value-item">
+      <svg class="value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/>
+      </svg>
+      <div>
+        <div class="value-name">Lower Taxes</div>
+        <div class="value-desc">Protect WA's no income tax advantage</div>
+      </div>
+    </div>
+    <div class="value-item">
+      <svg class="value-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <div>
+        <div class="value-name">Parental Rights</div>
+        <div class="value-desc">Parents, not Olympia, lead families</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Proof Bar -->
 <div class="proof-bar" role="region" aria-label="Trust indicators">
@@ -625,86 +864,68 @@
   <div class="proof-sep" aria-hidden="true"></div>
   <div class="proof-item">Official WA GOP Affiliate</div>
   <div class="proof-sep" aria-hidden="true"></div>
-  <div class="proof-item">Oak Harbor &middot; Coupeville &middot; Langley</div>
+  <div class="proof-item">Est. Island County, WA</div>
   <div class="proof-sep" aria-hidden="true"></div>
-  <div class="proof-item">Established in Island County, WA</div>
+  <div class="proof-item">Oak Harbor &middot; Coupeville &middot; Langley</div>
 </div>
 
-<!-- Services -->
-<section class="section services-bg" id="services" aria-labelledby="services-h">
-  <div class="section-label">
-    <div class="section-label-line"></div>
-    <span class="section-label-text">What We Do</span>
+<!-- Issues: What We Stand For -->
+<section class="section issues-bg" id="issues" aria-labelledby="issues-h">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-text">Our Platform</span>
   </div>
-  <h2 class="section-heading" id="services-h">Advancing Conservative<br>Values Across Island County</h2>
-  <p class="section-sub">From endorsing proven candidates to registering new voters, we put boots on the ground so Republican values win at every level of government.</p>
+  <h2 class="section-heading" id="issues-h">What Island County Republicans<br>Are Fighting For</h2>
+  <p class="section-sub">Washington State's progressive leadership threatens the values that define Island County. Here's where we draw the line.</p>
 
-  <div class="services-list" role="list">
+  <div class="issues-grid" role="list">
 
-    <div class="service-row" role="listitem">
-      <span class="service-num" aria-hidden="true">01</span>
-      <div>
-        <h3 class="service-name">Candidate Endorsements</h3>
-        <p class="service-desc">We rigorously vet and endorse conservative candidates for local, state, and federal offices — so Island County voters know exactly who stands for their values on election day.</p>
+    <div class="issue-card" role="listitem">
+      <div class="issue-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <polygon points="20,4 23.1,13 32.9,13 25.2,18.6 28,28 20,22.4 12,28 14.8,18.6 7.1,13 16.9,13"/>
-      </svg>
+      <h3 class="issue-title">Second Amendment</h3>
+      <p class="issue-desc">We will never allow Olympia to strip Island County residents of their constitutional right to keep and bear arms. Not now. Not ever.</p>
     </div>
 
-    <div class="service-row" role="listitem">
-      <span class="service-num" aria-hidden="true">02</span>
-      <div>
-        <h3 class="service-name">Voter Registration Drives</h3>
-        <p class="service-desc">Our outreach teams work neighborhoods, community events, and local organizations to make sure every conservative in Island County is registered and ready to vote.</p>
+    <div class="issue-card" role="listitem">
+      <div class="issue-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
       </div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <rect x="7" y="9" width="26" height="24" rx="2"/>
-        <path d="M14 9V5M26 9V5M7 18h26"/>
-        <path d="M14 26l4 4 9-7"/>
-      </svg>
+      <h3 class="issue-title">Military &amp; Veterans</h3>
+      <p class="issue-desc">NAS Whidbey Island is the backbone of our community. We fight for full military funding, veterans' benefits, and respect for those who serve.</p>
     </div>
 
-    <div class="service-row" role="listitem">
-      <span class="service-num" aria-hidden="true">03</span>
-      <div>
-        <h3 class="service-name">PCO Recruitment &amp; Organization</h3>
-        <p class="service-desc">Precinct Committee Officers are the backbone of local Republican politics. We recruit, train, and support PCOs across every precinct to keep conservative leadership strong from the ground up.</p>
+    <div class="issue-card" role="listitem">
+      <div class="issue-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
       </div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <circle cx="20" cy="14" r="5"/>
-        <path d="M11 34c0-5 4-9 9-9s9 4 9 9"/>
-        <circle cx="8" cy="16" r="3.5"/>
-        <path d="M3 32c0-3.5 2.2-6.5 5-6.5"/>
-        <circle cx="32" cy="16" r="3.5"/>
-        <path d="M37 32c0-3.5-2.2-6.5-5-6.5"/>
-      </svg>
+      <h3 class="issue-title">Lower Taxes</h3>
+      <p class="issue-desc">Washington has no income tax — and we intend to keep it that way. We oppose every new tax, fee, and assessment coming out of Olympia.</p>
     </div>
 
-    <div class="service-row" role="listitem">
-      <span class="service-num" aria-hidden="true">04</span>
-      <div>
-        <h3 class="service-name">Community Forums &amp; Events</h3>
-        <p class="service-desc">We host candidate debates, civic forums, and community events throughout the year that keep Island County residents engaged, informed, and connected to the issues that matter most to them.</p>
+    <div class="issue-card" role="listitem">
+      <div class="issue-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       </div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M7 10h26v20H7z" rx="2"/>
-        <path d="M13 7v3M27 7v3"/>
-        <path d="M13 20h4M23 20h4M13 26h8"/>
-      </svg>
+      <h3 class="issue-title">Parental Rights</h3>
+      <p class="issue-desc">Parents — not school boards, not state agencies — have the final word on their children's education, values, and healthcare decisions.</p>
     </div>
 
-    <div class="service-row" role="listitem">
-      <span class="service-num" aria-hidden="true">05</span>
-      <div>
-        <h3 class="service-name">Civic Education &amp; Outreach</h3>
-        <p class="service-desc">From constitutional education workshops to ballot initiative training, we arm Island County Republicans with the knowledge and tools to be effective citizens and advocates in their communities.</p>
+    <div class="issue-card" role="listitem">
+      <div class="issue-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M20 5L7 13v3h26v-3z"/>
-        <path d="M11 16v16M17 16v16M23 16v16M29 16v16"/>
-        <path d="M7 32h26"/>
-      </svg>
+      <h3 class="issue-title">Public Safety</h3>
+      <p class="issue-desc">We back law enforcement unconditionally. Safe streets in Oak Harbor, Coupeville, and Langley require accountability and strong community policing.</p>
+    </div>
+
+    <div class="issue-card" role="listitem">
+      <div class="issue-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      </div>
+      <h3 class="issue-title">Election Integrity</h3>
+      <p class="issue-desc">Every legal vote must be counted and every illegal vote must be prevented. We fight for transparent, secure, and trustworthy elections in Island County.</p>
     </div>
 
   </div>
@@ -713,25 +934,28 @@
 <!-- About -->
 <section class="section about-bg" id="about" aria-labelledby="about-h">
   <div class="about-grid">
+
     <div class="about-img-wrap">
-      <div class="about-img-accent" aria-hidden="true"></div>
-      <img class="about-img" id="aboutImg"
-        src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=1000&fit=crop&auto=format"
-        alt="Island County Republican Party community" loading="lazy">
-      <div class="about-badge" aria-label="Serving Island County for over 45 years">
+      <img class="about-img"
+        src="https://images.unsplash.com/photo-1551836022-4c4ee58f5340?w=800&h=1000&fit=crop&auto=format"
+        alt="The United States Capitol — representing Island County Republicans in Washington"
+        loading="lazy">
+      <div class="about-badge">
         <span class="about-badge-num">45+</span>
         <span class="about-badge-label">Years Serving<br>Island County</span>
       </div>
     </div>
+
     <div>
-      <div class="section-label">
-        <div class="section-label-line"></div>
-        <span class="section-label-text">About Us</span>
+      <div class="about-eyebrow section-eyebrow">
+        <div class="eyebrow-line" style="background:var(--gold)"></div>
+        <span class="eyebrow-text" style="color:var(--gold)">Who We Are</span>
       </div>
-      <h2 class="section-heading" id="about-h">The Official Republican Party of Island County</h2>
-      <p style="font-size:0.94rem;color:var(--text-muted);line-height:1.82;margin-bottom:2.5rem;">
-        Established under Washington State Code (RCW 29A.80.030), the Island County Republican Party is the official home for conservative voters in Oak Harbor, Coupeville, Langley, and every corner of our island community. We believe in the power of grassroots organizing and the strength of principled leadership.
+      <h2 class="about-heading" id="about-h">The Conservative Heart of Island County, Washington</h2>
+      <p class="about-body">
+        Established under Washington State Code (RCW 29A.80.030), we are the official Republican Party of Island County — serving Oak Harbor, Coupeville, Langley, and every precinct across Whidbey and Camano Islands. We are a community of veterans, fishermen, farmers, business owners, and families who believe in American exceptionalism and the power of principled conservative leadership.
       </p>
+
       <div class="about-stats">
         <div class="stat-card">
           <span class="stat-num" data-target="12">0</span>
@@ -750,6 +974,7 @@
           <span class="stat-label">Events Per Year</span>
         </div>
       </div>
+
       <div class="about-bullets">
         <div class="about-bullet">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
@@ -757,82 +982,162 @@
         </div>
         <div class="about-bullet">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Spanning Oak Harbor, Coupeville, Langley &amp; all Island County precincts
+          Proud supporter of NAS Whidbey Island &amp; military families
         </div>
         <div class="about-bullet">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Transparent leadership with elected officers &amp; executive board
+          Grassroots-led with elected officers &amp; transparent governance
         </div>
         <div class="about-bullet">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          Committed to the U.S. Constitution and Island County voters
+          Spanning every precinct on Whidbey &amp; Camano Islands
         </div>
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- Events -->
+<section class="section events-bg" id="events" aria-labelledby="events-h">
+  <div class="section-eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-text">Get Involved</span>
+  </div>
+  <h2 class="section-heading" id="events-h">Upcoming Events</h2>
+  <p class="section-sub">From PCO meetings to candidate forums — there's always a way to get active in Island County Republican politics.</p>
+
+  <div class="events-grid">
+
+    <div class="event-card">
+      <img class="event-img"
+        src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=600&h=320&fit=crop&auto=format"
+        alt="PCO Training Workshop" loading="lazy">
+      <div class="event-body">
+        <div class="event-date">&#128197; April 15, 2026 &middot; 6:00 PM</div>
+        <h3 class="event-title">PCO Training Workshop</h3>
+        <p class="event-desc">New and returning Precinct Committee Officers — learn how to register voters, canvass your precinct, and maximize your impact in the 2026 cycle.</p>
+        <div class="event-meta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Oak Harbor Community Center
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <img class="event-img"
+        src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=320&fit=crop&auto=format"
+        alt="Lincoln Day Dinner" loading="lazy">
+      <div class="event-body">
+        <div class="event-date">&#128197; May 10, 2026 &middot; 5:30 PM</div>
+        <h3 class="event-title">Annual Lincoln Day Dinner</h3>
+        <p class="event-desc">Our flagship annual fundraiser. Keynote speakers, candidate introductions, and an evening celebrating conservative values in Island County.</p>
+        <div class="event-meta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Whidbey Island Center for the Arts
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <img class="event-img"
+        src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=600&h=320&fit=crop&auto=format"
+        alt="Candidate Forum" loading="lazy">
+      <div class="event-body">
+        <div class="event-date">&#128197; June 3, 2026 &middot; 7:00 PM</div>
+        <h3 class="event-title">2026 Candidate Forum</h3>
+        <p class="event-desc">Meet the conservative candidates running for Island County Commissioner, State Legislature, and local school board seats. Ask questions, hear their plans.</p>
+        <div class="event-meta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Coupeville Rec Center
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- Testimonials -->
 <section class="section testimonials-bg" id="testimonials" aria-labelledby="testimonials-h">
-  <div style="text-align:center;margin-bottom:3.5rem;">
-    <div class="section-label" style="justify-content:center;">
-      <div class="section-label-line"></div>
-      <span class="section-label-text">Member Voices</span>
-      <div class="section-label-line"></div>
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="section-eyebrow" style="justify-content:center;">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Community Voices</span>
+      <div class="eyebrow-line"></div>
     </div>
     <h2 class="section-heading" id="testimonials-h" style="text-align:center;">
-      Voices from<br>Island County
+      Island County Republicans<br>Speak Out
     </h2>
   </div>
   <div class="testimonials-grid">
+
     <div class="testimonial-card">
-      <div class="testimonial-quote" aria-hidden="true">&#8220;</div>
       <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-text">The Island County GOP helped me get registered and understand what was actually on my ballot. For the first time in years, I felt like my vote genuinely mattered. These folks are the real deal.</p>
-      <div class="testimonial-author">James R.</div>
-      <div class="testimonial-location">Oak Harbor, WA</div>
+      <p class="testimonial-text">"The Island County GOP helped me understand what was actually on my ballot and why it mattered. I'm a Navy vet stationed at Whidbey — these folks actually fight for military families. No other organization comes close."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">JR</div>
+        <div>
+          <div class="testimonial-name">James R.</div>
+          <div class="testimonial-location">Oak Harbor, WA &middot; Navy Veteran</div>
+        </div>
+      </div>
     </div>
+
     <div class="testimonial-card">
-      <div class="testimonial-quote" aria-hidden="true">&#8220;</div>
       <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-text">I attended my first candidate forum hosted by the Island County GOP and was blown away by the quality of discussion. This is how local democracy is supposed to work — neighbors talking to neighbors.</p>
-      <div class="testimonial-author">Patricia M.</div>
-      <div class="testimonial-location">Coupeville, WA</div>
+      <p class="testimonial-text">"I attended the candidate forum last spring and was genuinely impressed. Real questions, real answers — no scripted nonsense. This is what Island County politics should look like. I became a PCO the next week."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">PM</div>
+        <div>
+          <div class="testimonial-name">Patricia M.</div>
+          <div class="testimonial-location">Coupeville, WA &middot; Business Owner</div>
+        </div>
+      </div>
     </div>
+
     <div class="testimonial-card">
-      <div class="testimonial-quote" aria-hidden="true">&#8220;</div>
       <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p class="testimonial-text">Becoming a PCO through the Island County Republican Party was one of the best decisions I've made. They gave me real training and real responsibility — not just a title. I feel like I'm actually making a difference.</p>
-      <div class="testimonial-author">David K.</div>
-      <div class="testimonial-location">Langley, WA</div>
+      <p class="testimonial-text">"My family has been on Whidbey Island for three generations. We fish, we farm, and we pay taxes. The Island County GOP is the only party that actually shows up here — not just at election time, but year-round."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">DK</div>
+        <div>
+          <div class="testimonial-name">David K.</div>
+          <div class="testimonial-location">Langley, WA &middot; Third-Generation Islander</div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
 <!-- CTA Banner -->
 <section class="cta-banner" aria-labelledby="cta-h">
-  <h2 class="cta-banner-heading" id="cta-h">
-    Proudly Serving Oak Harbor, Coupeville,<br>Langley &amp; All of Island County
+  <h2 class="cta-heading" id="cta-h">
+    Proudly Serving Oak Harbor,<br>
+    Coupeville, Langley &amp; All of Island County
   </h2>
-  <p class="cta-banner-sub">Join thousands of Island County conservatives showing up, speaking out, and making a difference at every level of government.</p>
-  <a href="#contact" class="btn-gold">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    Join the Party Today
-  </a>
+  <p class="cta-sub">Join thousands of Island County conservatives showing up, speaking out, and keeping Washington's conservative communities strong.</p>
+  <div class="cta-btns">
+    <a href="#contact" class="btn-navy">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Join the Party Today
+    </a>
+    <a href="tel:3602791197" class="btn-navy-outline">Call (360) 279-1197</a>
+  </div>
 </section>
 
 <!-- Contact -->
 <section class="section contact-bg" id="contact" aria-labelledby="contact-h">
   <div class="contact-grid">
     <div>
-      <div class="section-label">
-        <div class="section-label-line"></div>
-        <span class="section-label-text">Contact Us</span>
+      <div class="section-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Contact Us</span>
       </div>
       <h2 class="section-heading" id="contact-h">Get Involved with<br>the Island County GOP</h2>
-      <a href="tel:3602791197" class="contact-phone-link" aria-label="Call us: (360) 279-1197">(360) 279-1197</a>
+      <a href="tel:3602791197" class="contact-phone-link" aria-label="Call (360) 279-1197">(360) 279-1197</a>
       <span class="contact-phone-label">Call or Text Anytime</span>
-      <div class="contact-hours" role="group" aria-label="Office hours">
+      <div role="group" aria-label="Office hours">
         <div class="contact-hours-title">Office Hours</div>
         <div class="contact-hours-item"><span class="contact-hours-day">Monday – Friday</span><span>9:00 AM – 5:00 PM</span></div>
         <div class="contact-hours-item"><span class="contact-hours-day">Saturday</span><span>10:00 AM – 2:00 PM</span></div>
@@ -844,6 +1149,7 @@
         <a href="mailto:islandcountygop@gmail.com">islandcountygop@gmail.com</a>
       </address>
     </div>
+
     <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
       <div class="form-row">
         <div class="form-group">
@@ -864,10 +1170,22 @@
         <input class="form-input" type="tel" id="fphone" name="phone" placeholder="(360) 555-0100" autocomplete="tel">
       </div>
       <div class="form-group">
-        <label class="form-label" for="fmessage">How Can We Help?</label>
-        <textarea class="form-textarea" id="fmessage" name="message" placeholder="I'd like to volunteer, become a PCO, attend an event..."></textarea>
+        <label class="form-label" for="finterest">I Want To</label>
+        <select class="form-input" id="finterest" name="interest">
+          <option value="">Select an option…</option>
+          <option>Become a PCO</option>
+          <option>Volunteer for a campaign</option>
+          <option>Register to vote</option>
+          <option>Attend an event</option>
+          <option>Make a donation</option>
+          <option>Other</option>
+        </select>
       </div>
-      <button type="submit" class="btn-primary" style="align-self:flex-start;" id="submitBtn">
+      <div class="form-group">
+        <label class="form-label" for="fmessage">Message (Optional)</label>
+        <textarea class="form-textarea" id="fmessage" name="message" placeholder="Tell us a bit about yourself and how you'd like to get involved…"></textarea>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Send Message
       </button>
@@ -879,38 +1197,64 @@
 
 <!-- Footer -->
 <footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      Island County GOP
-      <span>Republican Party &middot; Island County, WA</span>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-row">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <ellipse cx="14" cy="19" rx="10" ry="8" fill="#C9A843"/>
+          <ellipse cx="22" cy="15" rx="5" ry="4" fill="#C9A843"/>
+          <ellipse cx="27" cy="11" rx="2.5" ry="5" fill="#C9A843"/>
+          <circle cx="24" cy="10" r="1" fill="#002868"/>
+          <rect x="10" y="25" width="3" height="5" rx="1.5" fill="#C9A843"/>
+          <rect x="15" y="25" width="3" height="5" rx="1.5" fill="#C9A843"/>
+          <rect x="4" y="25" width="3" height="4" rx="1.5" fill="#C9A843"/>
+        </svg>
+        <div class="footer-brand-name">Island County GOP</div>
+      </div>
+      <p class="footer-brand-tagline">The official Republican Party of Island County, Washington — fighting for your values since day one.</p>
     </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#testimonials">Testimonials</a>
+
+    <div class="footer-nav-col">
+      <h4>Quick Links</h4>
+      <a href="#issues">Our Values</a>
+      <a href="#about">About Us</a>
+      <a href="#events">Events</a>
       <a href="#contact">Contact</a>
+      <a href="#contact">Become a PCO</a>
     </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>
+        P.O. Box 293, Oak Harbor, WA 98277<br>
+        <a href="tel:3602791197">(360) 279-1197</a><br>
+        <a href="mailto:islandcountygop@gmail.com">islandcountygop@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 Island County Republican Party. All rights reserved.</p>
+    <p class="footer-affil">Official Washington State Republican Party Affiliate &middot; RCW 29A.80.030</p>
   </div>
 </footer>
 
 <script>
-  // Nav scroll + toggle
+  // Nav scroll
   const navEl = document.getElementById('nav');
-  const navToggle = document.getElementById('navToggle');
-  const navOverlay = document.getElementById('navOverlay');
-  const navClose = document.getElementById('navClose');
-
   window.addEventListener('scroll', () => {
     navEl.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navOverlay = document.getElementById('navOverlay');
+  const navClose = document.getElementById('navClose');
   navToggle.addEventListener('click', () => {
     navOverlay.classList.add('open');
     navToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   });
-
   function closeNav() {
     navOverlay.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
@@ -918,30 +1262,24 @@
   }
   navClose.addEventListener('click', closeNav);
 
-  // IntersectionObserver: fade-in sections
-  const sections = document.querySelectorAll('.section');
+  // Section fade-in
   const fadeObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        fadeObs.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); }
     });
   }, { threshold: 0.1 });
-  sections.forEach(s => fadeObs.observe(s));
+  document.querySelectorAll('.section').forEach(s => fadeObs.observe(s));
 
   // Count-up stats
-  const statEls = document.querySelectorAll('.stat-num[data-target]');
   const countObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       const el = e.target;
       const target = parseInt(el.dataset.target, 10);
       let start = null;
-      const duration = 1600;
       const step = ts => {
         if (!start) start = ts;
-        const p = Math.min((ts - start) / duration, 1);
+        const p = Math.min((ts - start) / 1500, 1);
         const ease = 1 - Math.pow(1 - p, 3);
         el.textContent = Math.floor(ease * target);
         if (p < 1) requestAnimationFrame(step);
@@ -951,21 +1289,19 @@
       countObs.unobserve(el);
     });
   }, { threshold: 0.5 });
-  statEls.forEach(n => countObs.observe(n));
+  document.querySelectorAll('.stat-num[data-target]').forEach(n => countObs.observe(n));
 
   // Form submit
   document.getElementById('contactForm').addEventListener('submit', e => {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     btn.textContent = 'Message Sent!';
-    btn.style.background = 'var(--accent)';
-    btn.style.borderColor = 'var(--accent)';
+    btn.style.background = '#1a5c1a';
+    btn.style.borderColor = '#1a5c1a';
     btn.disabled = true;
     setTimeout(() => {
       btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Send Message';
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.disabled = false;
+      btn.style.background = ''; btn.style.borderColor = ''; btn.disabled = false;
       e.target.reset();
     }, 3000);
   });
